@@ -1,18 +1,18 @@
 def comprobar_ataques(i, j):#Función para verificar si una reina en la posición i,j del tablero está siendo atacada por otra reina.
     #Comprobar vertical y horizontalmente
-    for k in range(0,N):
+    for k in range(0,len(tablero)):
         if tablero[i][k]==1 or tablero[k][j]==1:
             return True
     #Comprobar diagonalmente
-    for k in range(0,N):
-        for l in range(0,N):
+    for k in range(0,len(tablero)):
+        for l in range(0,len(tablero)):
             if (k+l==i+j) or (k-l==i-j):
                 if tablero[k][l]==1:
                     return True
     return False
 
 
-def N_reinas(n):#Función principal para resolver el problema de las N reinas utilizando backtracking
+def N_reinas(n):#Función principal para resolver el problema de las 8 reinas utilizando backtracking
     #Se verifica si n es 0 para saber si se colocaron las reinas y se encontro una solucion correcta
     if n==0:
         return True
